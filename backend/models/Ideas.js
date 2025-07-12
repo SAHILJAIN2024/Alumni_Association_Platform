@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const   IdeaSchema = new mongoose.Schema({
     title: { type: String, required: true },
@@ -9,4 +9,4 @@ const   IdeaSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model('Idea', IdeaSchema);
+export const Idea = mongoose.model('Idea', IdeaSchema);

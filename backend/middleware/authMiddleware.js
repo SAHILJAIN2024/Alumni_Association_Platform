@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
+const accesstoken = process.env.ACCESS_TOKEN_SECRET;
 
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -13,7 +13,7 @@ const authenticateToken = (req, res, next) => {
   }
 
   try {
-    const verified = jwt.verify(token, JWT_SECRET);
+    const verified = jwt.verify(token, accesstoken);
     req.user = verified; // Add user info to request object
     next(); // Move to next middleware or controller
   } catch (err) {
@@ -21,4 +21,4 @@ const authenticateToken = (req, res, next) => {
   }
 };
 
-module.exports = authenticateToken;
+export default authenticateToken;

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const communitypostSchema = new mongoose.Schema({
     title: { type: String, required: true },
@@ -9,3 +9,5 @@ const communitypostSchema = new mongoose.Schema({
     picture: { type: String, default: 'default.jpg' },
     createdAt: { type: Date, default: Date.now }
 })
+
+export const CommunityPost = mongoose.model('CommunityPost', communitypostSchema);

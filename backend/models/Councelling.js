@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const councellingSchema = new mongoose.Schema({
     username: { type: String, required: true },
@@ -7,4 +7,4 @@ const councellingSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model('Councelling', councellingSchema);
+export const Councelling = mongoose.model('Councelling', councellingSchema);

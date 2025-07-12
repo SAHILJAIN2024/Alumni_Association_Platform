@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const opportunitySchema = new mongoose.Schema({
     title: { type: String, required: true },
@@ -10,4 +10,4 @@ const opportunitySchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model('Opportunity', opportunitySchema);
+export const Opportunity = mongoose.model('Opportunity', opportunitySchema);
